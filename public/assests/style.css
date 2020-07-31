@@ -1,0 +1,83 @@
+body {
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  margin: 0;
+  background: rgb(24, 24, 24);
+  background: linear-gradient(
+    337deg,
+    rgba(24, 24, 24, 1) 0%,
+    rgb(247, 111, 111, 1) 100%
+  );
+}
+
+.imageSize {
+  height: 300px;
+
+  margin: 10px;
+}
+
+.bigimage {
+  min-width: 1000px;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  margin: 0px;
+}
+
+.gradientimage {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background: rgb(238, 174, 174);
+  background: radial-gradient(
+    circle,
+    rgba(201, 183, 183, 0.39) 0%,
+    rgb(245, 224, 224) 100%
+  );
+}
+
+.darkimage {
+  min-width: 1000px;
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.sideimage {
+  margin-left: 20px;
+  width: 330px;
+  position: absolute;
+  left: 0;
+  z-index: 7;
+  animation-name: example;
+  animation-duration: 130s;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    top: calc(-5550px + 100vh);
+  }
+  100% {
+    top: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .sideimage {
+    margin-left: 5px;
+    width: 250px;
+  }
+  @keyframes example {
+    0% {
+      top: calc(-4200px + 100vh);
+    }
+    100% {
+      top: 0;
+    }
+  }
+}
